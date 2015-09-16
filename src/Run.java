@@ -15,7 +15,7 @@ public class Run {
         int enemy = new java.util.Random().nextInt(2);
         switch (enemy){
         case 0: ene = new Slime(); break;
-        default: ene = new Rolicom();
+        default: ene = new Lolicom();
         }
         if(floor%5==0) {
           ene = new Boss();
