@@ -1,4 +1,4 @@
-class Slime extends Enemy {
+public class Slime extends Enemy {
   Run floor = new Run();
   {
     maxHP += 4;    // 敵の最大体力

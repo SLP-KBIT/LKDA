@@ -2,7 +2,7 @@ public class KNYN extends Character {
 
   //--- 初期能力
   {
-  lv = 1;         // レベル
+  lv = 1;            // レベル
   maxHP = 20;        // 最大体力
   nowHP = 20;        // 現在体力
   at = 5;            // 攻撃力
