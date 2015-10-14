@@ -1,5 +1,7 @@
 import java.awt.Color;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 public class GamePanel extends JPanel {
@@ -7,11 +9,13 @@ public class GamePanel extends JPanel {
   //--- イメージパネルの設計
   JPanel imgpanel(){
     JPanel panel = new JPanel();
-    /*ImageIcon  img;
+
+    ImageIcon  img;
     img = new ImageIcon("seki.jpg");
     JLabel label = new JLabel(img);
     label.setBounds(10, 10, 100, 100);
-    panel.add(label);*/
+    panel.add(label);
+
     panel.setBorder(new TitledBorder("イメージパネル"));
     panel.setBackground(Color.YELLOW);
     panel.setBounds(10, 10, 500, 350);// パネルのサイズ・位置を設定
@@ -21,10 +25,8 @@ public class GamePanel extends JPanel {
   //--- テキストパネルの設計
   JPanel txtpanel(){
     JPanel panel = new JPanel();
-    //JLabel label = new JLabel("Sample Text");
-    //panel.add(label);
     panel.setBorder(new TitledBorder("テキストパネル"));
-    panel.setBackground(Color.RED);
+    panel.setBackground(Color.ORANGE);
     panel.setBounds(10, 370, 500, 170);// パネルのサイズ・位置を設定
     return panel;
   }
