@@ -9,11 +9,11 @@ public class GamePanel extends JPanel {
   //--- イメージパネルの設計
   JPanel imgpanel(){
     JPanel panel = new JPanel();
+    panel.setLayout(null);
 
-    ImageIcon  img;
-    img = new ImageIcon("seki.jpg");
-    JLabel label = new JLabel(img);
-    label.setBounds(10, 10, 100, 100);
+    ImageIcon icon = new ImageIcon(getClass().getResource("image/seki.jpg"));
+    JLabel label = new JLabel(icon);
+    label.setBounds(50, 50, 100, 100);
     panel.add(label);
 
     panel.setBorder(new TitledBorder("イメージパネル"));
@@ -47,5 +47,12 @@ public class GamePanel extends JPanel {
     panel.setBackground(Color.GREEN);
     panel.setBounds(520, 10, 170, 350);// パネルのサイズ・位置を設定
     return panel;
+  }
+
+  public void setPanel(JPanel p, int x, int y,int w, int h, Color c) {
+    p.setSize(w,h);             //パネルのサイズを設定
+    p.setBackground(c);         //パネルの背景色を設定
+    p.setVisible(true);         //パネルの表示を許可
+    p.setLocation(x,y);         //フレーム中でのパネルの位置を設定
   }
 }

@@ -1,4 +1,6 @@
-public class Main {
+import javax.swing.JApplet;
+
+public class Main extends JApplet {
   public static void main(String[] args) {
     /*Slime baka = new Slime();
     baka.hoge();
@@ -12,5 +14,4 @@ public class Main {
     Run game = new Run();
     game.runGame();
   }
-
 }

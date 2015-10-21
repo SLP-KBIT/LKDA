@@ -4,7 +4,7 @@ public class Run {
   static int Floor = 10;
   int floor = 1;
   KNYN knyn = new KNYN();
-  Frame panel = new Frame();
+  Frame frame = new Frame();
   void runGame() {
 
     while(this.floor<=Floor) {
@@ -20,7 +20,7 @@ public class Run {
         if(floor%5==0) {
           ene = new Boss();
         }
-        panel.createFrame(ene);
+        frame.createFrame(ene);
         System.out.println(ene.name+"と遭遇した!");
         ene.powerUp(this.floor);
         while (true){
