@@ -11,7 +11,7 @@ public class Frame /*extends JFrame implements ActionListener*/ {
     frame.setLayout(null);
     frame.setResizable(false);//ここでフレームのサイズを変更できないように設定しています。
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setVisible(true);
+    //frame.setVisible(true);
 
     //GamePanel panel = new GamePanel();
     //JLabel tittle_logo;
@@ -25,7 +25,7 @@ public class Frame /*extends JFrame implements ActionListener*/ {
     tittle_logo.setBounds(70, 50, 20, 40);
     //content.add(tittle_logo);
 */
-    ImagePanel imgpanel = new ImagePanel();
+    ImagePanel imgpanel = new ImagePanel("/image/seki.jpg");
     TextPanel txtpanel = new TextPanel();
     CommandPanel cmdpanel = new CommandPanel();
     InformationPanel infopanel = new InformationPanel();
@@ -33,7 +33,9 @@ public class Frame /*extends JFrame implements ActionListener*/ {
     content.add(txtpanel);
     content.add(cmdpanel);
     content.add(infopanel);
-    imgpanel.addImage("image/seki.jpg");
+    //content.validate();
+    //imgpanel.addImage("image/seki.jpg");
+    //content.validate();
 /*
     txtpanel = panel.txtpanel();
     content.add(txtpanel);
@@ -48,7 +50,7 @@ public class Frame /*extends JFrame implements ActionListener*/ {
     //finish.setBounds(167, 220, 91, 21);
     //content.add(finish);
     //finish.addActionListener(this);
-
+    frame.setVisible(true);
   }
 
 
