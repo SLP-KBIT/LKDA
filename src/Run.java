@@ -9,17 +9,23 @@ public class Run {
   Scanner stdIn = new Scanner(System.in);
 
   void runGame() {
-    //frame.titleScreen();
+    frame.titleScreen();
+    try{
+      Thread.sleep(300);
+    }catch(InterruptedException e){
+    }
+    frame.changeScreen();
     for ( floor = 1; floor <= MAXFloor; floor++ ) {
       floorActionRoutine();
     }
   }
 
   //--- フロアでの行動の流れを規定
-  void floorActionRoutine() {
+  private void floorActionRoutine() {
     int killCounter = 0;
     System.out.println("現在"+this.floor+"階層");
     while (true) {
+
       makeEnemy();                 // 敵の出現
       System.out.println(ene.name+"と遭遇した!");
       battleRoutine();             // 戦闘
@@ -35,7 +41,7 @@ public class Run {
   }
 
   //--- 戦闘の流れを規定
-  void battleRoutine() {
+  private void battleRoutine() {
     while (true) {
       knyn.printHP();
       knyn.printMP();
@@ -49,7 +55,7 @@ public class Run {
   }
 
   //--- 敵を生成
-  void makeEnemy() {
+  private void makeEnemy() {
     if ( this.floor%5 == 0 ) { ene = new Boss(); }    // 5階層ごとにボス
     else {                                            // それ以外はランダム
       int rand = new java.util.Random().nextInt(2);
@@ -61,7 +67,7 @@ public class Run {
     ene.powerUp(this.floor);                         // 階層に応じたパワーアップ
   }
 
-  void getEXP() {
+  private void getEXP() {
     System.out.println("敵を倒した");
     System.out.println(knyn.name+"は"+ene.exp+"経験値手に入れた");
     knyn.exp += ene.exp;   // 経験値を加算
@@ -71,7 +77,7 @@ public class Run {
     }
   }
 
-  boolean battleExec(int cmd) {
+  private boolean battleExec(int cmd) {
     //-- プレイヤが先攻
     if ( knyn.sp >= ene.sp ) {
       switch (cmd) {
