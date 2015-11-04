@@ -9,5 +9,6 @@ public class Slime extends Enemy {
     sp = 3;        // 敵の素早さ
     exp *= 100;       // 経験値
     name = "スライム";
+    path = "seki.jpg";
   }
 }

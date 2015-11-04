@@ -13,9 +13,11 @@ class Character {
     int nowMP;    // 現在MP
     int exp;
     String name;
+    String path;
 
     //--- 攻撃
     void attack(Character chara) {
+      System.out.println(this.name + "の攻撃!");
       int damage = this.at/2 - chara.df/4;
       if (damage <= 0){
         System.out.println("No Damage");
@@ -28,6 +30,7 @@ class Character {
 
   //-- 魔法攻撃
     void magicattack(Character chara) {
+      System.out.println(this.name + "の魔法攻撃!");
       int damage = this.mat/2 - chara.mdf/4;
       if (damage <= 0){
         System.out.println("No Damage");

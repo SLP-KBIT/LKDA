@@ -4,5 +4,6 @@ public class Lolicom extends Enemy{
   exp *= 100;       // 経験値
   mdf = 2;       // 敵の魔法守備力
   name = "ロリコン";
+  path = "lolicom.jpg";
   }
 }

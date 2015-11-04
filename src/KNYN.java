@@ -72,7 +72,8 @@ public class KNYN extends Character {
 
   //---死(ゲームオーバー)
   void die() {
-    System.out.println("knynは死んだwww");
+    System.out.println("KNYNは死んだwww");
+    System.exit(0);
   }
 
 //--- MP表示

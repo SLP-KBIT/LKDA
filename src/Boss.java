@@ -8,6 +8,7 @@ public class Boss extends Enemy{
     sp *= 3;              // 敵の素早さ
     exp *= 1000000;       // 経験値
     name = "ガチホモ";
+    path = "gatihomo.jpg";
   }
 
 }
