@@ -28,7 +28,7 @@ class Character {
       }
     }
 
-  //-- 魔法攻撃
+    //-- 魔法攻撃
     void magicattack(Character chara) {
       System.out.println(this.name + "の魔法攻撃!");
       int damage = this.mat/2 - chara.mdf/4;

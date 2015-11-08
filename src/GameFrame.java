@@ -53,7 +53,7 @@ public class GameFrame extends JFrame {
   }
 
   //--- 画像の変更
-  public void chageImage(String path) {
+  public void changeImage(String path) {
     //-- 今の敵の画像を消去
     content.remove(imgpanel);
     //-- 新しい敵の画像を描画
@@ -67,3 +67,4 @@ public class GameFrame extends JFrame {
 
   }
 }
+

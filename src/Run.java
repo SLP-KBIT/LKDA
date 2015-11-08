@@ -1,17 +1,18 @@
 import java.util.Scanner;
 
 public class Run {
-  static int MAXFloor = 10;
+  static int MAXFloor = 1;
   int floor;
-  KNYN knyn = new KNYN();
-  Enemy ene;
+  static KNYN knyn = new KNYN();
+  static Enemy ene;
   GameFrame frame = new GameFrame();
   Scanner stdIn = new Scanner(System.in);
+  static boolean eneflag, iflag;
 
   void runGame() {
     frame.titleScreen();
     try{
-      Thread.sleep(300);
+      Thread.sleep(1000);
     }catch(InterruptedException e){
     }
     frame.changeScreen();
@@ -28,6 +29,7 @@ public class Run {
 
       makeEnemy();                 // 敵の出現
       System.out.println(ene.name+"と遭遇した!");
+      frame.changeImage(ene.path);
       battleRoutine();             // 戦闘
       killCounter++;
       if( killCounter >= 3 ) {     // 一定数倒したら次に進むか確認
@@ -42,14 +44,20 @@ public class Run {
 
   //--- 戦闘の流れを規定
   private void battleRoutine() {
-    while (true) {
+    eneflag = false;
+    while ( ! eneflag ) {
+      iflag = false;
       knyn.printHP();
       knyn.printMP();
       ene.printHP();
       System.out.println("KNYNはどうする?");
+      while(true) { if(iflag) { break; } }
+      System.out.println("入力確認");
+      /*
       System.out.println("1 : 攻撃,   2 : 回復,  3：魔法攻撃");
-      int cmd = stdIn.nextInt();           // 行動選択
+      while (cmd <= 0 ) { }
       if ( battleExec(cmd) ) { break; }    // 行動実行
+      */
     }
     getEXP();                              // 経験値入手
   }
@@ -77,7 +85,7 @@ public class Run {
     }
   }
 
-  private boolean battleExec(int cmd) {
+  public static void battleExec(int cmd) {
     //-- プレイヤが先攻
     if ( knyn.sp >= ene.sp ) {
       switch (cmd) {
@@ -86,7 +94,7 @@ public class Run {
       case 3: knyn.magicattack(ene);   break;
       default: System.out.println(knyn.name + "は変なことをした!");  knyn.die();
       }
-      if ( ! ene.aliveCheck() ) { return true; }
+      if ( ! ene.aliveCheck() ) { eneflag = true;  return;}
       ene.attack(knyn);
       if ( ! knyn.aliveCheck() ) { knyn.die(); }
     }
@@ -100,8 +108,8 @@ public class Run {
       case 3: knyn.magicattack(ene);   break;
       default: System.out.println(knyn.name + "は変なことをした!");  knyn.die();
       }
-      if ( ! ene.aliveCheck() ) { return true; }
+      if ( ! ene.aliveCheck() ) { eneflag =  true;  return;}
     }
-    return false;
+    iflag = true;
   }
 }
