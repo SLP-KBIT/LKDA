@@ -7,19 +7,17 @@ import javax.swing.JFrame;
 //===============================================================
 //========フレームと、ゲーム全体に共通のデータを扱うクラス=======
 //===============================================================
-public class FrameWork extends JFrame
-{
+public class GameFrame extends JFrame {
   private static final int WIDTH = 800;
   private static final int HEIGHT = 600;
-  static FramePanel fp;
+  static MainPanel mp;
 
-  public FrameWork()
-  {
+  public GameFrame() {
     setTitle("LKDA");
     setPreferredSize(new Dimension(WIDTH, HEIGHT));
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    fp = new FramePanel();
-    add(fp);
+    mp = new MainPanel();
+    add(mp);
     pack();
     setVisible(true);
     setResizable(false);

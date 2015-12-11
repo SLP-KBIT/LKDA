@@ -2,8 +2,8 @@ package LKDA;
 
 public class LKDA
 {
-  static FrameWork f;
+  static GameFrame gf;
   public static void main(String[] args) {
-    f = new FrameWork();
+    gf = new GameFrame();
   }
 }

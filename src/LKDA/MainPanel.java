@@ -8,22 +8,20 @@ import javax.swing.JPanel;
 //============================================================
 //============フレーム内のパネル総合監理クラス================
 //============================================================
-class FramePanel extends JPanel
-{
+class MainPanel extends JPanel {
   private static final int WIDTH = 400;
   private static final int HEIGHT = 300;
   private static final Color  color = Color.ORANGE;
-  static GraphicsCanvas gc;
-  static MessageCanvas mc;
+  static GraphicsPanel gp;
+  static MessagePanel mp;
 
-  public FramePanel()
-  {
+  public MainPanel() {
     setPreferredSize(new Dimension(WIDTH, HEIGHT));
     setBackground(color);
-    gc = new GraphicsCanvas();
-    add(gc);
-    mc = new MessageCanvas();
-    add(mc);
+    gp = new GraphicsPanel();
+    add(gp);
+    mp = new MessagePanel();
+    add(mp);
     setVisible(true);
     setLayout(null);
   }
