@@ -1,3 +1,5 @@
+package PAST;
+
 public class Boss extends Enemy{
   {
     maxHP = 100;          // 敵の最大体力

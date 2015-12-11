@@ -1,3 +1,5 @@
+package PAST;
+
 public class Slime extends Enemy {
   Run floor = new Run();
   {

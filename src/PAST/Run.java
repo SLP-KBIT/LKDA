@@ -1,3 +1,5 @@
+package PAST;
+
 import java.util.Scanner;
 
 public class Run {

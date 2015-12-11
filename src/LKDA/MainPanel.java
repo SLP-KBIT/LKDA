@@ -5,9 +5,6 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
-//============================================================
-//============フレーム内のパネル総合監理クラス================
-//============================================================
 class MainPanel extends JPanel {
   private static final int WIDTH = 400;
   private static final int HEIGHT = 300;
@@ -20,6 +17,7 @@ class MainPanel extends JPanel {
     setBackground(color);
     gp = new GraphicsPanel();
     add(gp);
+    gp.loadImage("image/seki.jpg");
     mp = new MessagePanel();
     add(mp);
     setVisible(true);

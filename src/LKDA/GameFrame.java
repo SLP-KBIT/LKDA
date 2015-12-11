@@ -4,9 +4,6 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-//===============================================================
-//========フレームと、ゲーム全体に共通のデータを扱うクラス=======
-//===============================================================
 public class GameFrame extends JFrame {
   private static final int WIDTH = 800;
   private static final int HEIGHT = 600;

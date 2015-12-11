@@ -4,6 +4,9 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
+//=============================================================
+//==============戦闘の文章を表示させるクラス===================
+//=============================================================
 public class MessagePanel extends JPanel {
   private static final int X = 0;
   private static final int Y = 400;
