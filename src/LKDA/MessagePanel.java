@@ -30,10 +30,7 @@ public class MessagePanel extends JPanel {
     str3 = cn; flag3 = true;
     str4 = bm; flag4 = true;
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> dec8c3068eb8cccb911cd6486c8dcdd3768a190c
   @Override
   public void paintComponent(Graphics g) {
     super.paintComponent(g);

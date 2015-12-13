@@ -25,7 +25,6 @@ class MainPanel extends JPanel implements ActionListener {
     add(gp);
     mp = new MessagePanel();
     add(mp);
-<<<<<<< HEAD
     image = new JButton("画像");
     image.addActionListener(this);
     image.setBounds(650, 400, 100, 50);
@@ -41,10 +40,9 @@ class MainPanel extends JPanel implements ActionListener {
     if ( e.getSource() == image ) { gp.setImage("image/seki.jpg"); }
     if ( e.getSource() == message ) { mp.setMessage(); }
     repaint();
-=======
+
     mp.setMessage();
     setVisible(true);
     setLayout(null);
->>>>>>> dec8c3068eb8cccb911cd6486c8dcdd3768a190c
   }
 }
