@@ -20,6 +20,7 @@ class MainPanel extends JPanel {
     gp.loadImage("image/seki.jpg");
     mp = new MessagePanel();
     add(mp);
+    mp.setMessage();
     setVisible(true);
     setLayout(null);
   }
