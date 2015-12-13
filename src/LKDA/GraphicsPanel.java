@@ -16,16 +16,19 @@ public class GraphicsPanel extends JPanel {
   private Image image;
   private static int width;
   private static int height;
+  private static boolean flag;
 
   public GraphicsPanel() {
     setBounds(X, Y, WIDTH, HEIGHT);
     setBackground(color);
+    flag = false;
   }
 
-  public void loadImage(String path) {
+  public void setImage(String path) {
     //-- イメージを読み込む
     ImageIcon icon = new ImageIcon(getClass().getResource(path));
     image = icon.getImage();
+    flag = true;
     //-- 幅と高さをセット
     width = image.getWidth(this);
     height = image.getHeight(this);
@@ -34,6 +37,6 @@ public class GraphicsPanel extends JPanel {
   @Override
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
-    g.drawImage(image, (WIDTH-width)/2, (HEIGHT-height)/2, this);
+    if ( flag )  { g.drawImage(image, (WIDTH-width)/2, (HEIGHT-height)/2, this); }
   }
 }
