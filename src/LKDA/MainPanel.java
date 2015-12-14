@@ -38,11 +38,7 @@ class MainPanel extends JPanel implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     if ( e.getSource() == image ) { gp.setImage("image/seki.jpg"); }
-    if ( e.getSource() == message ) { mp.setMessage(); }
+    else if ( e.getSource() == message ) { mp.setMessage(); }
     repaint();
-
-    mp.setMessage();
-    setVisible(true);
-    setLayout(null);
   }
 }
