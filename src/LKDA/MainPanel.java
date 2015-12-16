@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -16,6 +17,7 @@ class MainPanel extends JPanel implements ActionListener {
   private static JButton message;
   static GraphicsPanel gp;
   static MessagePanel mp;
+  Random rand = new Random();
 
   public MainPanel() {
     setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -35,10 +37,9 @@ class MainPanel extends JPanel implements ActionListener {
     add(message);
   }
 
-  @Override
   public void actionPerformed(ActionEvent e) {
     if ( e.getSource() == image ) { gp.setImage("image/seki.jpg"); }
-    else if ( e.getSource() == message ) { mp.setMessage(); }
+    else if ( e.getSource() == message ) { mp.setMessage(rand.nextInt(2), rand.nextInt(3)); }
     repaint();
   }
 }

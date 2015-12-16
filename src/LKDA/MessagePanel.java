@@ -13,10 +13,9 @@ public class MessagePanel extends JPanel {
   private static final int HEIGHT = 200;
   private static final Color color = Color.BLACK;
   private static final Font font = new Font("MS ゴシック", Font.BOLD, 20);
+  private static String str;
   private static String str1,str2,str3,str4;
   private static boolean flag1,flag2,flag3,flag4;
-  String cn = "KNYN";
-  String bm = " の こうげき";
 
   public MessagePanel() {
     setBounds(X, Y, WIDTH, HEIGHT);
@@ -24,11 +23,13 @@ public class MessagePanel extends JPanel {
     flag1 = flag2 = flag3 = flag4 = false;
   }
 
-  public void setMessage() {
-    str1 = cn + bm; flag1 = true;
-    str2 = bm + cn; flag2 = true;
-    str3 = cn; flag3 = true;
-    str4 = bm; flag4 = true;
+  public void setMessage(int cn, int bm) {
+    str = Message.chara[cn] + Message.battle[bm];
+    if ( ! flag1 ) { str1 = str; flag1 = true; }
+    else if ( ! flag2 ) { str2 = str; flag2 = true; }
+    else if ( ! flag3 ) { str3 = str; flag3 = true; }
+    else if ( ! flag4 ) { str4 = str; flag4 = true; }
+    else { str1 = str2; str2 = str3; str3 = str4; str4 = str;  }
   }
 
   @Override
