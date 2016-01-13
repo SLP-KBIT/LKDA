@@ -18,28 +18,41 @@ class MainPanel extends JPanel implements ActionListener {
   static GraphicsPanel gp;
   static MessagePanel mp;
   Random rand = new Random();
+  static Character player;
+  static HPWindow playerHP;
 
   public MainPanel() {
     setPreferredSize(new Dimension(WIDTH, HEIGHT));
     setLayout(null);
     setBackground(color);
+
     gp = new GraphicsPanel();
     add(gp);
+
     mp = new MessagePanel();
     add(mp);
+
     image = new JButton("画像");
     image.addActionListener(this);
     image.setBounds(650, 400, 100, 50);
     add(image);
+
     message = new JButton("メッセージ");
     message.addActionListener(this);
     message.setBounds(650, 500, 100, 50);
     add(message);
+
+    player = new Character();
+
+    JPanel p = new JPanel();
+    p.setBounds(610,0,100,100);
+    p.setBackground(Color.BLUE);
+    add(p);
   }
 
   public void actionPerformed(ActionEvent e) {
     if ( e.getSource() == image ) { gp.setImage("image/seki.jpg"); }
-    else if ( e.getSource() == message ) { mp.setMessage(rand.nextInt(2), rand.nextInt(3)); }
+    else if ( e.getSource() == message ) { mp.setMessage(rand.nextInt(2), rand.nextInt(5)); }
     repaint();
   }
 }
