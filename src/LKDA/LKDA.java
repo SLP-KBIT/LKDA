@@ -4,6 +4,9 @@ import java.awt.Container;
 
 import javax.swing.JFrame;
 
+//====================================================================
+//                     ゲーム全体を構成するクラス
+//====================================================================
 public class LKDA extends JFrame {
   public LKDA() {
     //-- タイトル

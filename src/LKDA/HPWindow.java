@@ -5,12 +5,14 @@ import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
-
+//====================================================================
+//               HPウィンドウの構造を定義するクラス
+//====================================================================
 public class HPWindow extends JPanel{
-  public static final int WIDTH = 200;
-  public static final int HEIGHT = 150;
-  private static final Font font = new Font("MS ゴシック", Font.BOLD, 15);
-  public int charanum;
+  public static final int WIDTH = 200;    // ウィンドウの幅
+  public static final int HEIGHT = 150;    // ウィンドウの高さ
+  private static final Font font = new Font("MS ゴシック", Font.BOLD, 15);    // 文字のフォント
+  public int charanum;    // キャラクタ識別用変数
 
   public HPWindow(int x, int y, int charanum) {
     this.charanum = charanum;
@@ -23,8 +25,8 @@ public class HPWindow extends JPanel{
     super.paintComponent(g);
     g.setFont(font);
     g.setColor(Color.WHITE);
-    g.drawString("name:  ほげほげ", 30, 30);
-    g.drawString("HP  :  100/100", 30, 60);
+    g.drawString("name:  ほげほげ", 30, 30);    // テスト用
+    g.drawString("HP  :  100/100", 30, 60);    // テスト用
   }
 
 }
