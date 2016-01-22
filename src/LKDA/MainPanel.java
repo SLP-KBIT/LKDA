@@ -10,16 +10,16 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 class MainPanel extends JPanel implements ActionListener {
-  private static final int WIDTH = 800;
-  private static final int HEIGHT = 600;
+  private static final int WIDTH = 805;
+  private static final int HEIGHT = 605;
   private static final Color  color = Color.ORANGE;
   private static JButton image;
   private static JButton message;
   static GraphicsPanel gp;
   static MessagePanel mp;
   Random rand = new Random();
-  static Character player;
-  static HPWindow playerHP;
+  static Character chara;
+  static HPWindow charaHP, eneHP;
 
   public MainPanel() {
     setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -32,6 +32,14 @@ class MainPanel extends JPanel implements ActionListener {
     mp = new MessagePanel();
     add(mp);
 
+    chara = new Character();
+
+    charaHP = new HPWindow(610,5,0);
+    add(charaHP);
+
+    eneHP = new HPWindow(610, 160,1);
+    add(eneHP);
+
     image = new JButton("画像");
     image.addActionListener(this);
     image.setBounds(650, 400, 100, 50);
@@ -41,13 +49,6 @@ class MainPanel extends JPanel implements ActionListener {
     message.addActionListener(this);
     message.setBounds(650, 500, 100, 50);
     add(message);
-
-    player = new Character();
-
-    JPanel p = new JPanel();
-    p.setBounds(610,0,100,100);
-    p.setBackground(Color.BLUE);
-    add(p);
   }
 
   public void actionPerformed(ActionEvent e) {

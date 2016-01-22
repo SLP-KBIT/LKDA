@@ -8,8 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class GraphicsPanel extends JPanel {
-  private static final int X = 0;
-  private static final int Y = 0;
+  private static final int X = 5;
+  private static final int Y = 5;
   private static final int WIDTH = 600;
   private static final int HEIGHT = 400;
   private static final Color color = Color.GRAY;
