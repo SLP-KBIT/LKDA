@@ -11,6 +11,7 @@ public class Message {
 
   //-- バトルメッセージを定義
   public static String battle[] = {
+      " は どうする?",
       " が あらわれた!",
       " の こうげき!",
       " の 必殺技!",
