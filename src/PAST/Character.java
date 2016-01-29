@@ -1,3 +1,5 @@
+package PAST;
+
 class Character {
 
     //--- パラメータ
