@@ -1,3 +1,5 @@
+package PAST;
+
 public class Lolicom extends Enemy{
   {
   at += 3;        // 敵の攻撃

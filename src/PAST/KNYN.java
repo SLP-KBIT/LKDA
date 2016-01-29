@@ -1,3 +1,5 @@
+package PAST;
+
 public class KNYN extends Character {
 
   //--- 初期能力

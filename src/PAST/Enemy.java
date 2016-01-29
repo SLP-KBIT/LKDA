@@ -1,3 +1,5 @@
+package PAST;
+
 class Enemy extends Character {
   {
   maxHP = 15;    // 敵の最大体力

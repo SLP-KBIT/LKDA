@@ -1,14 +1,24 @@
+package PAST;
+
 import java.util.Scanner;
 
 public class Run {
+<<<<<<< HEAD:src/Run.java
   static int MAXFloor = 1;
   int floor;
   static KNYN knyn = new KNYN();
   static Enemy ene;
+=======
+  Scanner stdIn = new Scanner(System.in);
+  static int Floor = 10;
+  int floor = 1;
+  KNYN knyn = new KNYN();
+>>>>>>> develop:src/PAST/Run.java
   GameFrame frame = new GameFrame();
   Scanner stdIn = new Scanner(System.in);
   static boolean eneflag, iflag;
 
+<<<<<<< HEAD:src/Run.java
   void runGame() {
     frame.titleScreen();
     try{
@@ -20,6 +30,62 @@ public class Run {
       floorActionRoutine();
     }
   }
+=======
+        Enemy ene;
+        int enemy = new java.util.Random().nextInt(2);
+        switch (enemy){
+        case 0: ene = new Slime(); break;
+        default: ene = new Lolicom();
+        }
+        if(floor%5==0) {
+          ene = new Boss();
+        }
+        frame.changeScreen();
+        System.out.println(ene.name+"と遭遇した!");
+        ene.powerUp(this.floor);
+        while (true){
+          if (! knyn.aliveCheck()){knyn.die(); return;}
+          else {
+            knyn.printHP();
+            knyn.printMP();
+            ene.printHP();
+            System.out.println("KNYNはどうする?");
+            System.out.println("1 : 攻撃,   2 : 回復,  3：魔法攻撃");
+            int n = stdIn.nextInt();
+            if(n == 1) {
+              if (knyn.sp >= ene.sp) {
+                System.out.println(knyn.name+"の攻撃!");
+                knyn.attack(ene);
+                if (ene.aliveCheck()) {
+                  System.out.println(ene.name+"の攻撃!");
+                  ene.attack(knyn);
+                } else {break;}
+              } else {
+                if (ene.aliveCheck()) {
+                  System.out.println(ene.name+"の攻撃!");
+                  ene.attack(knyn);
+                } else {break;}
+                System.out.println(knyn.name+"の攻撃!");
+                knyn.attack(ene);
+              }
+            } else if (n==3) {
+              if (knyn.sp >= ene.sp) {
+                System.out.println(knyn.name+"の攻撃!");
+                knyn.magicattack(ene);
+                if (ene.aliveCheck()) {
+                  System.out.println(ene.name+"の攻撃!");
+                  ene.attack(knyn);
+                } else {break;}
+              } else {
+                if (ene.aliveCheck()) {
+                  System.out.println(ene.name+"の攻撃!");
+                  ene.attack(knyn);
+                } else {break;}
+                System.out.println(knyn.name+"の攻撃!");
+                knyn.magicattack(ene);
+              }
+            } else {knyn.skill();}
+>>>>>>> develop:src/PAST/Run.java
 
   //--- フロアでの行動の流れを規定
   private void floorActionRoutine() {
@@ -35,7 +101,10 @@ public class Run {
       if( killCounter >= 3 ) {     // 一定数倒したら次に進むか確認
         System.out.println("次の階層に移動する？");
         System.out.println("1 : 次の階層に   2 : この階層にとどまる");
+<<<<<<< HEAD:src/Run.java
         //Scanner stdIn = new Scanner(System.in);
+=======
+>>>>>>> develop:src/PAST/Run.java
         int s = stdIn.nextInt();
         if ( s == 1 ) { break; }
       }

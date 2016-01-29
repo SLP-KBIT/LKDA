@@ -1,3 +1,4 @@
+package PAST;
 
 public class Map {
   final int Floor = 10;    // 塔の高さのマクロ
