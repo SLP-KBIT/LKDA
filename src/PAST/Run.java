@@ -37,7 +37,6 @@ public class Run {
       if( killCounter >= 3 ) {     // 一定数倒したら次に進むか確認
         System.out.println("次の階層に移動する？");
         System.out.println("1 : 次の階層に   2 : この階層にとどまる");
-        //Scanner stdIn = new Scanner(System.in);
         int s = stdIn.nextInt();
         if ( s == 1 ) { break; }
       }
