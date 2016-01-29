@@ -3,6 +3,7 @@ package PAST;
 import java.util.Scanner;
 
 public class Run {
+  Scanner stdIn = new Scanner(System.in);
   static int Floor = 10;
   int floor = 1;
   KNYN knyn = new KNYN();
@@ -33,7 +34,6 @@ public class Run {
             ene.printHP();
             System.out.println("KNYNはどうする?");
             System.out.println("1 : 攻撃,   2 : 回復,  3：魔法攻撃");
-            Scanner stdIn = new Scanner(System.in);
             int n = stdIn.nextInt();
             if(n == 1) {
               if (knyn.sp >= ene.sp) {
@@ -83,7 +83,6 @@ public class Run {
         }
         System.out.println("次の階層に移動する？");
         System.out.println("1 : 次の階層に   2 : この階層にとどまる");
-        Scanner stdIn = new Scanner(System.in);
         int s = stdIn.nextInt();
         if (s==1) {break;}
       }
