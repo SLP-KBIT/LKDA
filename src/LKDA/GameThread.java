@@ -13,8 +13,9 @@ public class GameThread extends Thread{
 
   @Override
   public void run() {
+    MainPanel.mp.setMessage(1,0,1);
     while ( ! end ) {
-      MainPanel.mp.setMessage(0,0);
+      MainPanel.mp.setMessage(0,0,0);
       this.stopRun();
       try {
         Thread.sleep(time);

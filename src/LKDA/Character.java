@@ -23,13 +23,14 @@ public class Character {
   public void attack(Character chara) {
     int damage = this.at-chara.df;
     if ( damage > 0 ) {chara.nhp -= damage; }
-    MainPanel.mp.setMessage(num, 2);
+    MainPanel.mp.setMessage(this.num,0, 2);
+    MainPanel.mp.setMessage(chara.num,damage, 6);
   }
 
   //-- 回復
   public void recovery() {
     this.nhp += 30;
     if ( nhp > mhp ) { nhp = mhp; }
-    MainPanel.mp.setMessage(num, 4);
+    MainPanel.mp.setMessage(this.num,30,4);
   }
 }

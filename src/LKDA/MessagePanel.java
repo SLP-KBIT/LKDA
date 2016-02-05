@@ -26,8 +26,12 @@ public class MessagePanel extends JPanel {
   }
 
   //-- 表示用文字列に文字列を格納
-  public void setMessage(int cn, int bm) {
-    str = Message.chara[cn] + Message.battle[bm];
+  public void setMessage(int cn, int dmg, int bm) {
+    if ( dmg == 0 ) {
+      str = Message.chara[cn] + Message.battle[bm];
+    } else {
+      str = Message.chara[cn] + " は " + dmg + Message.battle[bm];
+    }
     if ( ! flag1 ) { str1 = str; flag1 = true; }
     else if ( ! flag2 ) { str2 = str; flag2 = true; }
     else if ( ! flag3 ) { str3 = str; flag3 = true; }
